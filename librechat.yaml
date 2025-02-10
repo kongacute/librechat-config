@@ -51,21 +51,21 @@ endpoints:
       forcePrompt: false
       dropParams: ["stop", "frequency_penalty"]
       modelDisplayLabel: "Perplexity Sonar"
-    - name: "together.ai"
-      apiKey: "${TOGETHERAI_API_KEY}"
-      baseURL: "https://api.together.xyz"
-      models:
-        default: [
-          "deepseek-ai/DeepSeek-R1",
-          "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free"
-        ]
-        fetch: false # fetching list of models is not supported
-      titleConvo: true
-      titleModel: "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free"
-      summarize: true
-      summaryModel: "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free"
-      forcePrompt: false
-      modelDisplayLabel: "together.ai"
+    # - name: "together.ai"
+    #   apiKey: "${TOGETHERAI_API_KEY}"
+    #   baseURL: "https://api.together.xyz"
+    #   models:
+    #     default: [
+    #       "deepseek-ai/DeepSeek-R1",
+    #       "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free"
+    #     ]
+    #     fetch: false # fetching list of models is not supported
+    #   titleConvo: true
+    #   titleModel: "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free"
+    #   summarize: true
+    #   summaryModel: "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free"
+    #   forcePrompt: false
+    #   modelDisplayLabel: "together.ai"
 
   # OpenRouter.ai
   # Model list: https://openrouter.ai/models
@@ -75,13 +75,15 @@ endpoints:
     baseURL: "https://openrouter.ai/api/v1"
     models:
       default: [
-        "openrouter/auto"
+        "openrouter/auto",
+        "deepseek/deepseek-r1:free",
+        "deepseek/deepseek-chat:free"
         ]
       fetch: false
     dropParams: ["stop"]
     titleConvo: true
-    titleModel: "openai/gpt-4o-mini"
+    titleModel: "deepseek/deepseek-chat:free"
     summarize: false
-    summaryModel: "openai/gpt-4o-mini"
+    summaryModel: "deepseek/deepseek-chat:free"
     forcePrompt: false
     modelDisplayLabel: "OpenRouter"
